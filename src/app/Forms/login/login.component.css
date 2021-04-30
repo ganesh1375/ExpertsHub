@@ -1,0 +1,56 @@
+
+
+input{
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+}
+.button{
+    border-radius: 1.5rem;
+    /* background-image: linear-gradient(to right ,lightblue,rgb(73, 111, 124)); */
+    background-color:rgb(73, 111, 124) ;
+
+}
+.button:hover{
+    /* background-image: linear-gradient(to left ,lightblue,rgb(73, 111, 124)); */
+    background-color: blue ;
+}
+.backBox{
+    background-image:  linear-gradient(to top, #a0534d,#a09c5f);
+    padding: 1.5rem;
+}
+.formBox{
+    padding: 3rem;
+    background-image: linear-gradient(to left, #f8f8f8df,#ffffffdf);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    
+}
+.loginImg{
+    padding: 3.5rem;
+    background-image: url('../../../assets/bg-01.jpg');
+    opacity: 0.3;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+.container1 {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.centered {
+    position: absolute;
+    top: 5rem;
+    left: 40%;
+    color: white;
+  }
+
+  img{
+      opacity: 0.4;
+      border-top-right-radius: 1.5rem;
+      border-top-left-radius: 1.5rem;
+  }
