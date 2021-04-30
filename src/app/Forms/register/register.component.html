@@ -7,7 +7,7 @@
 
             <div class="col-md-2"></div>
             <div class="col-md-8 offset=md-1">
-                 <form [formGroup]="registerForm" class="formBox">
+                 <form [formGroup]="registerForm" class="formBox" (ngSubmit)="onSubmit()">
                     <h1 class="title mb-5 text-center form-check-label text-dark">Sign Up</h1>
                     
                     <div class="form-group">
@@ -46,13 +46,15 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Confirm Password</label>
-                        <input type="password" [class.is-invalid]="confirmPassword.invalid&&confirmPassword.touched"
+                        <input type="password" [class.is-invalid]="(confirmPassword.invalid&&confirmPassword.touched) ||registerForm.errors?.misMatch"
                             formControlName="confirmPassword" class="form-control" placeholder="Enter confirm password">
-                        <div class="text-danger"
-                            *ngIf="confirmPassword.invalid&&confirmPassword.touched">
-                            <small *ngIf="confirmPassword.errors.required">confirm password is required</small>
-
+                           
+                        <div class="text-danger" *ngIf="(confirmPassword.invalid&&confirmPassword.touched) ||registerForm.errors?.misMatch">
+                            <small *ngIf="confirmPassword.errors?.required">confirm password is required</small>
+                            <small *ngIf="registerForm.errors.misMatch"> password do not match</small>
                         </div>
+
+
                     </div>
                     <br>
                     <div class="text-right">

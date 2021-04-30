@@ -39,5 +39,9 @@ export class RegisterComponent implements OnInit {
       confirmPassword:new FormControl('',[Validators.required])
     },{ validators: passwordValidators})
   }
+  onSubmit(){
+    console.log(this.registerForm.value);
+    
+  }
 
 }
