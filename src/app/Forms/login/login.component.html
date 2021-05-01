@@ -1,4 +1,4 @@
-<body class="backBox">
+<!-- <body class="backBox">
 
     <div class="container my-5">
 
@@ -29,7 +29,7 @@
                                         class="form-control" placeholder="Enter password">
                                     <div class="text-danger" *ngIf="password.invalid&&password.touched">
                                         <small *ngIf="password.errors.required">passowrd is required</small>
-                                        <!-- <small *ngIf="password.errors.minlength">Enter minimum 8 length charcter</small>                                     -->
+                                         <small *ngIf="password.errors.minlength">Enter minimum 8 length charcter</small>                                     
                                     </div>
                                 </div>
                             </div>
@@ -52,4 +52,94 @@
         </div>
     </div>
 
-</body>
+</body> -->
+
+<nav class="navbar navbar-expand-md bg-dark navbar-light">
+    <div class="container-fluid">
+     <div class="">
+         <a class="navbar-brand text-white"  routerLink="">
+             <img src="https://thumbs.dreamstime.com/z/vector-logo-creative-design-circle-technical-mechanical-illustration-simple-modern-flat-branding-company-creative-vector-technical-146115192.jpg"
+                 style="border-radius: 50%; width: 60px;" alt="">
+             𝐸𝓍𝓅𝑒𝓇𝓉𝓈𝐻𝓊𝒷
+         </a>
+     </div>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+         <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse pl-md-5 pl-0" id="collapsibleNavbar">
+         <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link text-white" style="font-size: 20px;" href="" routerLink="">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" style="font-size: 20px;" href="">About Us</a>
+            </li>
+             <li class="nav-item">
+                 <a class="nav-link  text-white" style="font-size: 20px;" href="">Contact</a>
+             </li>
+             <li class="nav-item">
+                 <a class="nav-link  text-white" style="font-size: 20px;" href="">Tags</a>
+             </li>
+         </ul>
+     </div>
+     <form class="form-inline mt-md-0 mt-2 " action="/action_page.php">
+         <input class="form-control mr-sm-2 mb-md-0 mb-1" type="text" placeholder="Search">
+         <button class="btn btn-success" type="submit">Search</button>
+         <button routerLink="/login" type="submit" class="btn btn-outline-primary  mt-md-0 mr-1 ml-2">Login</button>
+         <button routerLink="/register" class="btn btn-outline-danger ml-md-2 mr-0 mt-md-0 mr-md-2">Register</button>
+     </form>
+    </div>
+ </nav>
+
+
+
+<div class="main pb-5 pt-5">
+    <div class="container p-4  position" style=" max-width:800px;max-height:auto; margin:100px auto;">
+        <div class="row border p-4 bg-light shadow"
+            style="box-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; border-radius: 20px;">
+            <div class="col-md-6 p-4 col-12 order-md-1  order-2 ">
+                <form #loginForm="ngForm">
+                    <div class="form-group w-100 ">
+                        <label for="exampleInputEmail1">Email address </label>
+                        <input type="email" #email="ngModel" (focus)="dnone()"
+                            [class.is-invalid]="email.invalid && email.touched" required
+                            class="form-control shadow input-sm" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter Email" name="email" [ngModel]>
+
+                        <small *ngIf="invalidEmail" class="text-danger">Invalid Email Please Register</small>
+
+                        <div *ngIf="email.invalid && email.touched && email.errors">
+                            <small style="font-size: 20px;" *ngIf="email.errors.required" class="text-danger pt-1">Email
+                                Required</small>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group w-100">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" required class="form-control shadow" name="password" [ngModel]
+                            id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <!-- <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div> -->
+                    <div class="text-right mb-2">
+                        <a class="ml-md-2 ml-1 mt-md-0 mt-0">Forgot Password </a>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+                    <button routerLink="/register" class="btn btn-success ml-md-2 ml-1 mt-md-0 mt-0">Register</button>
+
+                </form>
+            </div>
+            <div class=" shadow col-md-6  col-12 order-md-2 order-1 backup d-flex align-items-end"
+                style="border-radius: 25px;">
+                <p class="text-light font-weight-bolder" style="font-size: 30px;">Hello <br> Welcome <br> Back</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>

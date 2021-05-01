@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { passwordValidators } from '../Validators/password.validators';
-
+declare var $:any;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -37,7 +37,13 @@ export class RegisterComponent implements OnInit {
       email:new FormControl(null,[Validators.required,Validators.email]),
       password:new FormControl('',[Validators.required,Validators.minLength(8)]),
       confirmPassword:new FormControl('',[Validators.required])
-    },{ validators: passwordValidators})
+    },{ validators: passwordValidators});
+    $(document).ready(() => {
+      //alert('I am Called From jQuery');
+      // $(window).on("load", function () {
+      $(".loader-wrapper").fadeOut(2000);
+      //});
+    });
   }
   onSubmit(){
     console.log(this.registerForm.value);

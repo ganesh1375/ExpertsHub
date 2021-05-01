@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,19 +7,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  invalidEmail: any = false;
   constructor() { }
-  loginForm:FormGroup;
-  get email(){
-    return this.loginForm.get('email')
-  }
-  get password(){
-    return this.loginForm.get('password')
-  }
+
   ngOnInit(): void {
-    this.loginForm = new FormGroup({
-      email:new FormControl(null,[Validators.required,Validators.email]),
-      password:new FormControl(null,[Validators.required/*,Validators.minLength(8)*/])
-    })
+    $(document).ready(() => {
+      //alert('I am Called From jQuery');
+      // $(window).on("load", function () {
+      $(".loader-wrapper").fadeOut(2000);
+      //});
+    });
+
+  }
+
+  dnone() {
+    this.invalidEmail = false;
   }
 
 }
